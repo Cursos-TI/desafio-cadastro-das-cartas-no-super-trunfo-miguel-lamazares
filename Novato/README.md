@@ -1,5 +1,8 @@
 # Desafio Novato
-
+## Guia de arquivos - 🔍
+- `novato` — Arquivo que contém todo o código devidamente comentado, facilitando o entendimento e acompanhamento do desenvolvimento.
+- `novato_limpo` — Arquivo contendo o código-fonte sem comentários, proporcionando uma visualização mais clara e objetiva da implementação.
+- `novato.exe` — Arquivo executável gerado a partir do código-fonte, permitindo a execução do programa sem a necessidade de compilação prévia.
 ## O que foi utilizado - 📚
 
 ### Bibliotecas - 🧩

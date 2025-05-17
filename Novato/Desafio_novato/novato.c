@@ -1,7 +1,7 @@
 // Criado por Miguel Lamazares
 
-/* IMPORTANDO BIBLIOTECAS NECESSÁRIAS
-1- stdio.h: Para funções de entrada e saída
+/* IMPORTANDO BIBLIOTECAS NECESSï¿½RIAS
+1- stdio.h: Para funï¿½ï¿½es de entrada e saï¿½da
 2- locale.h: Permitindo o uso de caracteres especiais
 */
 #include <stdio.h>
@@ -10,10 +10,10 @@
 int main()
 {
 
-    // Definindo o locale para o idioma português do Brasil com a ISO 8859-1
-    setlocale(LC_ALL, "Portuguese_Brazil");
+    // Definindo o locale para o idioma portuguï¿½s do Brasil com a ISO 8859-1
+    setlocale(LC_ALL, "pt_BR.iso88591");
 
-    // Declarando variáveis
+    // Declarando variï¿½veis
 
     // variaveis do tipo char para amazenar textos
     char estado[20], card_id[4], city[20], estado1[20], card_id1[4], city1[20];
@@ -38,72 +38,72 @@ int main()
     printf("Digite o nome da cidade: ");
     scanf("%s", city);
 
-    printf("Digite o número de habitantes: ");
+    printf("Digite o nï¿½mero de habitantes: ");
     scanf("%d", &populacao);
 
-    printf("Digite a área da cidade: ");
+    printf("Digite a ï¿½rea da cidade: ");
     scanf("%f", &area);
 
     printf("Digite o PIB da cidade: ");
     scanf("%f", &pib);
 
-    printf("Digite o número de pontos turísticos: ");
+    printf("Digite o nï¿½mero de pontos turï¿½sticos: ");
     scanf("%d", &ponto_turistico);
 
-    // Exibindo mensagem de confirmação
+    // Exibindo mensagem de confirmaï¿½ï¿½o
     printf("\nDados coletados com sucesso!\n\nIniciando o cadastramento da segunda carta, pressione Enter para continuar\n");
     getchar(); // Limpa o buffer do teclado
-    getchar(); // Aguarda o usuário pressionar Enter
+    getchar(); // Aguarda o usuï¿½rio pressionar Enter
 
-    // Solicitando informações para a segunda carta
+    // Solicitando informaï¿½ï¿½es para a segunda carta
     printf("Digite o nome do estado: ");
     scanf("%s", estado1);
 
     printf("Digite o nome da cidade: ");
     scanf("%s", city1);
 
-    printf("Digite o número de habitantes: ");
+    printf("Digite o nï¿½mero de habitantes: ");
     scanf("%d", &populacao1);
 
-    printf("Digite a área da cidade: ");
+    printf("Digite a ï¿½rea da cidade: ");
     scanf("%f", &area1);
 
     printf("Digite o PIB da cidade: ");
     scanf("%f", &pib1);
 
-    printf("Digite o número de pontos turísticos: ");
+    printf("Digite o nï¿½mero de pontos turï¿½sticos: ");
     scanf("%d", &ponto_turistico1);
 
-    // Exibindo mensagem de confirmação
+    // Exibindo mensagem de confirmaï¿½ï¿½o
     printf("\nDados coletados com sucesso!\n\nPressione Enter para visualizar as cartas registradas\n\n");
     getchar(); // Limpa o buffer do teclado
-    getchar(); // Aguarda o usuário pressionar Enter
+    getchar(); // Aguarda o usuï¿½rio pressionar Enter
 
-    // Confecção da carta 1
+    // Confecï¿½ï¿½o da carta 1
     printf("------------CARTA-1-------------\n");
-    printf("Código: %s\n", card_id);
+    printf("Cï¿½digo: %s\n", card_id);
     printf("Estado: %s\n", estado);
     printf("Cidade: %s\n", city);
-    printf("População: %d\n", populacao);
-    printf("Área: %.2f km²\n", area);
+    printf("Populaï¿½ï¿½o: %d\n", populacao);
+    printf("ï¿½rea: %.2f kmï¿½\n", area);
     printf("PIB: %.2f\n", pib);
-    printf("Pontos turísticos: %d\n", ponto_turistico);
+    printf("Pontos turï¿½sticos: %d\n", ponto_turistico);
     printf("\nPressione Enter para visualizar a segunda carta\n\n");
-    getchar(); // aguarda o usuário pressionar Enter
+    getchar(); // aguarda o usuï¿½rio pressionar Enter
 
-    // Confecção da carta 2
+    // Confecï¿½ï¿½o da carta 2
     printf("------------CARTA-2-------------\n");
-    printf("Código: %s\n", card_id1);
+    printf("Cï¿½digo: %s\n", card_id1);
     printf("Estado: %s\n", estado1);
     printf("Cidade: %s\n", city1);
-    printf("População: %d\n", populacao1);
-    printf("Área: %.2f km²\n", area1);
+    printf("Populaï¿½ï¿½o: %d\n", populacao1);
+    printf("ï¿½rea: %.2f kmï¿½\n", area1);
     printf("PIB: %.2f\n", pib1);
-    printf("Pontos turísticos: %d\n", ponto_turistico1);
+    printf("Pontos turï¿½sticos: %d\n", ponto_turistico1);
 
     // finaizando o programa
     printf("\nObrigado por utilizar o sistema de cadastro de cidades!\n\nPressione Enter para finalizar o programa\n\n");
-    getchar(); // aguarda o usuário pressionar Enter
+    getchar(); // aguarda o usuï¿½rio pressionar Enter
 
     return 0; // encerra o programa
 }
