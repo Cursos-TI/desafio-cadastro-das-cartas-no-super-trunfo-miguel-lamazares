@@ -7,6 +7,7 @@
 #define BLUE "\033[1;34m"
 #define GREEN "\033[1;92m"
 #define RESET "\033[0m"
+#define PURPLE "\033[1;35m"
 
 void mostrar_carta(char *estado, char *city, char *card_id, float *area, float *pib, unsigned long int *populacao, int *ponto_turistico, float *DP, float *PC, float *super)
 {
@@ -57,7 +58,7 @@ void carta()
 void calculo(float area, float pib, unsigned long int populacao, float *DP, float *PC)
 {
     *DP = populacao / area;
-    *PC = pib / populacao;
+    *PC = (pib * 1000000) / populacao;
 }
 
 void preencher_dados(char *estado, char *city, char *card_id, float *area, float *pib, unsigned long int *populacao, int *ponto_turistico)
@@ -157,12 +158,11 @@ void comparar_cartas(float *super, float *super1)
     }
 }
 
-
 void apresentar(float *area, float *pib, unsigned long int *populacao, int *ponto_turistico, float *DP, float *PC, float *super,
                 float *area1, float *pib1, unsigned long int *populacao1, int *ponto_turistico1, float *DP1, float *PC1, float *super1)
 {
-    printf(GREEN "______________________\n" RESET);
-    printf("Comparação dos atributos:\n");
+    printf(GREEN "______________________\n\n" RESET);
+    printf("Comparação dos atributos:\n\n");
 
     printf("Área: %s\n", (*area > *area1) ? "Carta 1 vence" : (*area < *area1) ? "Carta 2 vence"
                                                                                : "Empate");
@@ -178,7 +178,7 @@ void apresentar(float *area, float *pib, unsigned long int *populacao, int *pont
                                                                                          : "Empate");
     printf("Super Poder: %s\n", (*super > *super1) ? "Carta 1 vence" : (*super < *super1) ? "Carta 2 vence"
                                                                                           : "Empate");
-    printf(GREEN "______________________\n" RESET);
+    printf(GREEN "\n______________________\n" RESET);
 }
 
 int main()
@@ -206,7 +206,7 @@ int main()
     calculo(area, pib, populacao, &DP, &PC);
     calc_super_poder(&ponto_turistico, &populacao, &area, &pib, &DP, &PC, &super);
 
-    printf("A primeira carta foi criada com sucesso!\n");
+    printf("\nA primeira carta foi criada com sucesso!\n\n");
     printf(BLUE "-----------------------------------------------------\n");
     printf(RESET);
     printf("Pressione Enter para visualizar a primeira carta\n");
@@ -222,8 +222,8 @@ int main()
     calculo(area1, pib1, populacao1, &DP1, &PC1);
     calc_super_poder(&ponto_turistico1, &populacao1, &area1, &pib1, &DP1, &PC1, &super1);
 
-    printf("A segunda carta foi criada com sucesso!\n");
-    printf(BLUE "-----------------------------------------------------\n");
+    printf("\nA segunda carta foi criada com sucesso!\n");
+    printf(BLUE "\n-----------------------------------------------------\n");
     printf(RESET "Pressione Enter para visualizar a segunda carta\n");
     getchar();
     system("cls");
@@ -234,11 +234,36 @@ int main()
     getchar();
     system("cls");
 
-    printf(BLUE "-----------------------------------------------------\n");
-    printf(RESET "Comparando as cartas...\n");
-    printf(BLUE "-----------------------------------------------------\n");
+    printf(BLUE "-----------------------------------------------------\n\n");
+    printf(RESET "Comparando as cartas...\n\n");
+    printf(BLUE "-----------------------------------------------------\n" RESET "");
     system("pause");
+    system("cls");
     comparar_cartas(&super, &super1);
     apresentar(&area, &pib, &populacao, &ponto_turistico, &DP, &PC, &super,
-                &area1, &pib1, &populacao1, &ponto_turistico1, &DP1, &PC1, &super1);
+               &area1, &pib1, &populacao1, &ponto_turistico1, &DP1, &PC1, &super1);
+    printf("\n");
+    printf(BLUE "-----------------------------------------------------\n" RESET "");
+
+    system("pause");
+    system("cls");
+
+    printf(PURPLE "OBRIGADO POR JOGAR!\nDeseja jogar novamente? (s/n)\n" RESET "");
+    if (getchar() == 's')
+    {
+        system("cls");
+        main();
+    }
+    else if (getchar() == 'n')
+    {
+        printf("Obrigado por jogar!\n\nPressione Enter para sair...\n");
+        system("pause");
+        return 0;
+    }
+    else
+    {
+        printf("Opção inválida! Saindo do jogo...\n");
+        system("pause");
+        return 0;
+    }
 }
