@@ -8,8 +8,8 @@ Este projeto consiste em um sistema de cadastro de cidades para um jogo de carta
 
 ## Guia de Arquivos 🔍
 
-- `aventureiro` — Código-fonte comentado para facilitar o entendimento.
-- `aventureiro_limpo` — Código-fonte sem comentários para consulta rápida.
+- `aventureiro.c` — Código-fonte comentado para facilitar o entendimento.
+- `aventureiro_limpo.c` — Código-fonte sem comentários para consulta rápida.
 - `aventureiro.exe` — Executável do programa.
 
 ---
@@ -198,6 +198,6 @@ getchar();
 
 ---
 
-## Autor
+## Aluno
 
 Miguel Lamazares

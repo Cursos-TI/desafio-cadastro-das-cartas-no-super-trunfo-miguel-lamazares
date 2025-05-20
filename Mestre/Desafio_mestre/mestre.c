@@ -31,7 +31,7 @@ void mostrar_carta(char *estado, char *city, char *card_id, float *area, float *
 void calc_super_poder(int *ponto_turistico, unsigned long int *populacao, float *area, float *pib, float *DP, float *PC, float *super)
 {
     float new_dp;
-    new_dp = *populacao / *area;
+    new_dp = *area / *populacao;
     *super = *ponto_turistico + *populacao + *area + *pib + *PC + new_dp;
 }
 void carta()
@@ -72,7 +72,7 @@ void preencher_dados(char *estado, char *city, char *card_id, float *area, float
     fgets(city, 20, stdin);
     city[strcspn(city, "\n")] = 0;
 
-    printf("Digite o ID do cartão: ");
+    printf("Digite o ID do carta: ");
     fgets(card_id, 4, stdin);
     card_id[strcspn(card_id, "\n")] = 0;
 
@@ -174,7 +174,7 @@ void apresentar(float *area, float *pib, unsigned long int *populacao, int *pont
                                                                                                                                         : "Empate");
     printf("PIB per Capita: %s\n", (*PC > *PC1) ? "Carta 1 vence" : (*PC < *PC1) ? "Carta 2 vence"
                                                                                  : "Empate");
-    printf("Densidade Populacional: %s\n", (*DP > *DP1) ? "Carta 1 vence" : (*DP < *DP1) ? "Carta 2 vence"
+    printf("Densidade Populacional: %s\n", (*DP < *DP1) ? "Carta 1 vence" : (*DP > *DP1) ? "Carta 2 vence"
                                                                                          : "Empate");
     printf("Super Poder: %s\n", (*super > *super1) ? "Carta 1 vence" : (*super < *super1) ? "Carta 2 vence"
                                                                                           : "Empate");
