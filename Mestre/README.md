@@ -8,8 +8,7 @@ Este projeto consiste em um sistema de cadastro de cidades para um jogo de carta
 
 # Guia de Arquivos 🔍
 
-- `mestre.c` — Código-fonte comentado para facilitar o entendimento.
-- `mestre_limpo.c` — Código-fonte sem comentários para consulta rápida.
+- `mestre.c` — Código-fonte do programa.
 - `mestre.exe` — Executável do programa.
 
 ---
