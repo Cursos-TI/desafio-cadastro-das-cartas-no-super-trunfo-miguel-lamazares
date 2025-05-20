@@ -280,6 +280,24 @@ PC = (pib * 1000000) / populacao;
 
 #### comparar_cartas() - Compara as cartas com base na soma dos atributos ⚽
 
+```c
+    if (*super > *super1)
+    {
+        printf("A primeira carta é mais forte!\n");
+    }
+    else if (*super < *super1)
+    {
+        printf("A segunda carta é mais forte!\n");
+    }
+    else
+    {
+        printf("As cartas são iguais!\n");
+    }
+```
+
+- Com base na soma dos atributos das cartas, é decidido qual carta é mais forte.
+
+
 #### apresentar() - Compara os atributos e exibe os resultados ⚖️
 ```c
  printf(GREEN "______________________\n\n" RESET);
@@ -290,8 +308,96 @@ PC = (pib * 1000000) / populacao;
 ```
 - Todos os dados recebem o mesmo tratamento de validação e exibição, garantindo consistência na entrada e saída das informações. Para fins estéticos, são utilizadas linhas verdes para separar visualmente as seções durante a comparação dos atributos das cartas. O comando `printf("Área: %s\n", ...)` imprime qual carta possui o atributo mais forte, utilizando o operador ternário (`? :`) para realizar uma decisão simples: avalia se um valor é maior, menor ou igual ao outro e, conforme o resultado, exibe a mensagem correspondente ao usuário.
 
-#### 
-## Observações
+### Main - o começo do programa 🎯
+```bash
+    setlocale(LC_ALL, "Portuguese_Brazil");
+```
+- `setlocale` é usada para permitir a exibição de caracteres especiais que não existem em inglês, como acentos. Isso garante que os caracteres e a formatação do português sejam exibidos corretamente na aplicação com a `ISO 8859-1`.
+
+*A declaração de variáveis citada anteriormente*
+
+```bash
+    carta();
+    system("pause");
+    system("cls");
+```
+- `carta()` exibe a apresentação inicial do programa.
+- `system("pause")` faz o programa aguardar até que o usuário pressione uma tecla para continuar.
+- `system("cls")` limpa o terminal antes de prosseguir para a próxima etapa do programa.
+
+```bash
+    preencher_dados(estado, city, card_id, &area, &pib, &populacao, &ponto_turistico);
+    calculo(area, pib, populacao, &DP, &PC);
+    calc_super_poder(&ponto_turistico, &populacao, &area, &pib, &DP, &PC, &super);
+```
+- Chama as três funções do tipo `void`, passando as variáveis da primeira carta. Assim, o usuário insere os dados da primeira carta e, em seguida, o programa realiza os cálculos necessários para exibi-los posteriormente.
+
+```bash
+     printf("\nA primeira carta foi criada com sucesso!\n\n");
+    printf(BLUE "-----------------------------------------------------\n");
+    printf(RESET);
+    printf("Pressione Enter para visualizar a primeira carta\n");
+    getchar();
+    system("cls");
+```
+- Exibe ao usuário a mensagem de que a primeira carta foi criada. Em seguida, uma linha azul é impressa, solicitando que o usuário pressione Enter para visualizar a carta. Após pressionar, o terminal é limpo.
+
+```bash
+     mostrar_carta(estado, city, card_id, &area, &pib, &populacao, &ponto_turistico, &DP, &PC, &super);
+
+    printf(RESET "pressione Enter para criar a segunda carta\n");
+    getchar();
+    system("cls");
+```
+- Exibe para o usuário a primeira carta. Logo abaixo, solicita que o usuário pressione Enter para confeccionar a segunda carta. Após pressionar Enter, o terminal é limpo.
+
+*A segunda carta é criada de forma similar a primeira*
+
+```bash
+    printf(RESET "pressione Enter para comparar as cartas\n");
+    getchar();
+    system("cls");
+``` 
+- Solicita ao usuário pressionar Enter para iniciar a comparação das cartas. Após pressionar, o terminal é limpo.
+
+```bash
+    printf(BLUE "-----------------------------------------------------\n\n");
+    printf(RESET "Comparando as cartas...\n\n");
+    printf(BLUE "-----------------------------------------------------\n" RESET "");
+    system("pause");
+    system("cls");
+    comparar_cartas(&super, &super1);
+    apresentar(&area, &pib, &populacao, &ponto_turistico, &DP, &PC, &super,
+               &area1, &pib1, &populacao1, &ponto_turistico1, &DP1, &PC1, &super1);
+    printf("\n");
+    printf(BLUE "-----------------------------------------------------\n");
+    printf(RESET "\nPressione Enter para encerrar o jogo\n");
+    system("pause");
+    system("cls");
+```
+- Apresenta uma mensagem entre linhas azuis para o usuário que está comparando as cartas; para continuar, deve pressionar uma tecla e o terminal é limpo. Logo em seguida, é apresentado qual carta é mais forte e a comparação de atributos entre linhas azuis. Embaixo, há a mensagem de que, para encerrar o jogo, o usuário deve apertar alguma tecla, e depois o terminal é limpo.
+
+```bash
+    printf(PURPLE "OBRIGADO POR JOGAR!\nDeseja jogar novamente? (s/n)\n" RESET "");
+    if (getchar() == 's')
+    {
+        system("cls");
+        main();
+    }
+    else if (getchar() == 'n')
+    {
+        printf("Obrigado por jogar!\n\nPressione Enter para sair...\n");
+        system("pause");
+        return 0;
+    }
+    else
+    {
+        printf("Opção inválida! Saindo do jogo...\n");
+        system("pause");
+        return 0;
+    }
+```
+- É exibida ao usuário uma mensagem em roxo agradecendo por jogar e perguntando se deseja jogar novamente. Se o usuário pressionar 's', o terminal é limpo e o jogo recomeça. Se pressionar 'n' ou qualquer outro caractere inválido, o jogo é encerrado com uma mensagem de finalização.
 
 ## Aluno
 

@@ -212,6 +212,7 @@ int main()
     printf("Pressione Enter para visualizar a primeira carta\n");
     getchar();
     system("cls");
+   
     mostrar_carta(estado, city, card_id, &area, &pib, &populacao, &ponto_turistico, &DP, &PC, &super);
 
     printf(RESET "pressione Enter para criar a segunda carta\n");
@@ -236,7 +237,7 @@ int main()
 
     printf(BLUE "-----------------------------------------------------\n\n");
     printf(RESET "Comparando as cartas...\n\n");
-    printf(BLUE "-----------------------------------------------------\n" RESET "");
+    printf(BLUE "-----------------------------------------------------\n");
     system("pause");
     system("cls");
     comparar_cartas(&super, &super1);
@@ -244,7 +245,7 @@ int main()
                &area1, &pib1, &populacao1, &ponto_turistico1, &DP1, &PC1, &super1);
     printf("\n");
     printf(BLUE "-----------------------------------------------------\n" RESET "");
-
+    printf(RESET "\nPressione Enter para encerrar o jogo\n");
     system("pause");
     system("cls");
 
